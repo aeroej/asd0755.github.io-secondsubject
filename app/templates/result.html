@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <img src="{% static 'asd.jpg' %}" style="width:100%; height: 100%; position:absolute; z-index: -1;">
+    <img src="{% static 'asd.jpg' %}" style="width:100%; height: 100%; position:fixed; z-index: -1;">
     <br>
     <h1 class="main">노래가사 속 단어들</h1>
     <p>이 노래가사에 쓰인 단어는 총 {{num}}개야! </p>
@@ -60,9 +60,9 @@
         {% endfor%}
 
         {% if find != 0 %}<br>
-            단어 "{{searchval}}" 총 {{find}}개야!
+            찾는 단어 "{{searchval}}"의 경우 총 {{find}}번 등장했어!
         {% else %}
-            <br>{{"찾는 단어는 없어요"}}
+            <br>{{"찾는 단어는 없어요!"}}
         {% endif %}
     </p>
     <p class="about">다시 해보기! >><button type="button"><a href="{% url 'home' %}">클릭!</a></button></p>
